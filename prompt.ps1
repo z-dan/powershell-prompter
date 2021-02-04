@@ -6,37 +6,48 @@
 
 .AUTHOR Dan
 
-.COMPANYNAME
-
-.COPYRIGHT (c) 2020 dan Zakaib
+.COPYRIGHT (c) 2020 Dan Zakaib
 
 .TAGS
 
 .LICENSEURI https://github.com/z-dan/powershell-prompter/blob/master/LICENSE
 
-.PROJECTURI
-
-.ICONURI
-
-.EXTERNALMODULEDEPENDENCIES 
-
-.REQUIREDSCRIPTS
-
-.EXTERNALSCRIPTDEPENDENCIES
 
 .RELEASENOTES
 
 
-.PRIVATEDATA
+
+.DESCRIPTION 
+A custom prompt function to shorten the displayed directory name. 
+
+This prompt will show the current directory location. When the 
+directory name exceeds the configured maximum length the middle of
+the directory name is replaced with a configured replacement string
+(e.g. the eplisis " ... ").
+
+For example, when in the following directory:
+ C:\Users\Name\Documents\Adobe\Premiere Elements\4.0\Adobe Premiere Elements Auto-Save"
+ 
+the prompt appears as:
+ 
+ # ~\Documents ... ements\4.0\Adobe Premiere Elements Auto-Save>
+
+To modify the configured values modify the variables:
+$maxPromptPathLength
+$inter
+$promptColour
+
+at the start of the script.
+
+To use the prompt, dot source this script:
+. .\prompt.ps1
+
+or copy it's contents into your powershell profile
+See
+https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles
 
 #>
 
-<# 
-
-.DESCRIPTION 
- A custom prompt function to shorten the displayed directory name. 
-
-#> 
 function prompt
 {
 	#configuration params
